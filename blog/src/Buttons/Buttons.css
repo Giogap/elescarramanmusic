@@ -1,0 +1,45 @@
+.Home-button {
+    color: #e2e2e2;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 60px;
+    width: 80px;
+    background-color: #1b1b1b;
+    border: #1b1b1b;
+    cursor: pointer;
+  }
+  
+  .Home-button:hover { 
+    color: grey;
+  }
+  
+  .Bandas-button {
+    color: #e2e2e2;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 60px;
+    width: 80px;
+    background-color: #1b1b1b;
+    border: #1b1b1b;
+    cursor: pointer;
+  }
+  
+  .Bandas-button:hover { 
+    color: grey;
+  }
+  
+  .Países-button {
+    color: #e2e2e2;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 60px;
+    width: 80px;
+    background-color: #1b1b1b;
+    border: #1b1b1b;
+    cursor: pointer;
+  }
+  
+  .Países-button:hover { 
+    color: grey;
+  }
+  
