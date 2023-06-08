@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Buttons from '../Buttons/Buttons';
+import Slide from '../Slide/Slide';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <Buttons />
         </div>
       <div className='App-body'>
-        <p>PUBLICIDAD</p>
+      <Slide />
       </div>
       <div className='App-footer'>
         <p>El Escarraman Music 2023</p>
