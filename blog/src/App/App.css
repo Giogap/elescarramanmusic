@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   border-bottom: 2px solid #270799;
-  width: 100%;
+  border-bottom-width: 100%;
 }
 
 h1 {
