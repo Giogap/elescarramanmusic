@@ -4,7 +4,7 @@ function Navbar() {
     return (
         <>
         <nav>
-          <a href='/' className='Site-title'>El Escarraman Music</a>
+          <a href='/' className='Title'>El Escarraman Music</a>
           <ul>
             <li>
                 <a href='/' className='App-home'>Home</a>
