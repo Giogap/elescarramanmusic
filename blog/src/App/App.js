@@ -3,7 +3,7 @@ import logo from './logo.svg';
 
 import Home from "../Navbar/Home";
 import Bandas from "../Navbar/Bandas";
-import País from "../Navbar/País";
+import Pais from "../Navbar/Pais";
 import Navbar from "../Navbar/Navbar";
 
 
@@ -16,8 +16,8 @@ function App() {
     case "/bandas":
       component = <Bandas />
       break;
-    case "/país":
-      component = <País />
+    case "/pais":
+      component = <Pais />
       break;
     // no default
   }

@@ -1,4 +1,4 @@
-function País() {
+function Pais() {
     return (
         <>
         <h1>PAIIIS</h1>
@@ -6,4 +6,4 @@ function País() {
     );
 }
 
-export default País;    
+export default Pais;    

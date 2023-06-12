@@ -13,7 +13,7 @@ function Navbar() {
                 <a href='/bandas' className='App-bandas'>Bandas</a>
             </li>
             <li>
-                <a href='/país' className='App-países'>País</a>
+                <a href='/pais' className='App-paises'>País</a>
             </li>
           </ul>
         </nav>
