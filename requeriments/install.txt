@@ -1,0 +1,10 @@
+client
+1. npx create-react-app .
+5. npm install axios
+
+
+server
+2. npm init
+3. npm install mysql
+4. npm install express
+6. npm install cors
