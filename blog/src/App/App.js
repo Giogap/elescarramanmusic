@@ -5,6 +5,7 @@ import Home from "../Navbar/Home";
 import Bandas from "../Navbar/Bandas";
 import Pais from "../Navbar/Pais";
 import Navbar from "../Navbar/Navbar";
+import Formulario from "../Formulario/Formulario";
 
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
       break;
     case "/pais":
       component = <Pais />
+      break;
+      case "/formulario":
+      component = <Formulario />
       break;
     // no default
   }

@@ -11,16 +11,17 @@ const db = mysql.createConnection({
     user: "root",
     password: "",
     database: "escarraman_db"
+
 });
 
 app.post("/create", (req, res) => {
     const nombre = req.body.nombre;
+    const biografia = req.body.biografia;
     const genero = req.body.genero;
     const pais = req.body.pais;
-    const biografia = req.body.biografia;
-    const multimedia = req.body.multimedia;
+    
 
-    db.query('INSERT INTO empleados(nombre, genero, pais, biografia, multimedia) VALUES (?, ?, ?, ?, ?)', [nombre, genero, pais, biografia, multimedia], (err, result) => {
+    db.query('INSERT INTO empleados(nombre, biografia, genero, pais) VALUES (?, ?, ?, ?, ?)', [nombre, biografia, genero, pais], (err, result) => {
         if (err) {
             console.log(err);
         } else {
