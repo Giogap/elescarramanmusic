@@ -30,7 +30,7 @@ function Formulario() {
     });
   }
 
-  getBandas();
+  /*getBandas();*/
   
   return (
     <div className="formulario">
@@ -50,7 +50,7 @@ function Formulario() {
         <button onClick={add}>Registrar</button>
       </div>
       <div className='lista'>
-
+      <button onClick={getBandas}>Mostrar</button>
       {
         bandasList.map((val, key) => {
           return <div className=''> {val.nombre} </div> 
