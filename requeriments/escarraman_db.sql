@@ -1,6 +1,6 @@
 CREATE DATABASE escarraman_db;
 
-USE blog_musical;
+USE escarraman_db;
 
 CREATE TABLE bandas (
   id INT PRIMARY KEY AUTO_INCREMENT,

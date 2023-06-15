@@ -10,6 +10,8 @@ function Formulario() {
   const [genero, setCargo] = useState("");
   const [pais, setPais] = useState("");
 
+  const [bandasList, setBandas] = useState([]);
+
   const add = () => {
     Axios.post("http://localhost:3001/create", {
       nombre: nombre,
@@ -17,10 +19,19 @@ function Formulario() {
       genero: genero,
       pais: pais,
     }).then(() => {
+      /*getBandas();*/
       alert("Registro Ok");
     });
   }
 
+  const getBandas = () => {
+    Axios.get("http://localhost:3001/bandas").then((response) => {
+      setBandas(response.data);
+    });
+  }
+
+  getBandas();
+  
   return (
     <div className="formulario">
       <div className="datos">
@@ -37,6 +48,15 @@ function Formulario() {
           setCargo(event.target.value);
         }} type="text"></input></label>
         <button onClick={add}>Registrar</button>
+      </div>
+      <div className='lista'>
+
+      {
+        bandasList.map((val, key) => {
+          return <div className=''> {val.nombre} </div> 
+        })
+      }
+
       </div>
     </div>
   );
