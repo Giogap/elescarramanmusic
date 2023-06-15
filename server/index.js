@@ -21,7 +21,7 @@ app.post("/create", (req, res) => {
     const pais = req.body.pais;
     
 
-    db.query('INSERT INTO empleados(nombre, biografia, genero, pais) VALUES (?, ?, ?, ?, ?)', [nombre, biografia, genero, pais], (err, result) => {
+    db.query('INSERT INTO bandas(nombre, biografia, genero, pais) VALUES (?, ?, ?, ?)', [nombre, biografia, genero, pais], (err, result) => {
         if (err) {
             console.log(err);
         } else {

@@ -29,7 +29,7 @@ function Formulario() {
         }} type="text"></input></label>
         <label>Biografia: <input onChange={(event)=>{
           setEdad(event.target.value);
-        }} type="number"></input></label>
+        }} type="text"></input></label>
         <label>Genero: <input onChange={(event)=>{
           setPais(event.target.value);
         }} type="text"></input></label>
