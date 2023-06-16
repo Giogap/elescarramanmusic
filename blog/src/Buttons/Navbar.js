@@ -4,7 +4,7 @@ function Navbar() {
     return (
         <>
         <nav>
-          <a href='/' className='Title'>El Escarraman Music</a>
+          <a href='/' className='Site-title'>El Escarraman Music</a>
           <ul>
             <li>
                 <a href='/' className='App-home'>Home</a>
@@ -13,7 +13,7 @@ function Navbar() {
                 <a href='/bandas' className='App-bandas'>Bandas</a>
             </li>
             <li>
-                <a href='/pais' className='App-paises'>País</a>
+                <a href='/pais' className='App-países'>País</a>
             </li>
           </ul>
         </nav>

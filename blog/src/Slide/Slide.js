@@ -12,10 +12,10 @@ function Slide() {
         <>
           <Carousel className='main-slide'>
                 <div>
-                  <img src={img1} />                    
+                  <img src={img1} alt='' />                    
                 </div>
                 <div>
-                  <img src={img2} />                    
+                  <img src={img2} alt=''/>                    
                 </div>
             </Carousel>
         </>

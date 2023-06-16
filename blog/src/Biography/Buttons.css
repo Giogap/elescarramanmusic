@@ -1,0 +1,27 @@
+.buttons {
+    width: 100%;
+    height: 12%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.multimedia-div {
+    height: auto;
+    margin: 10px;
+}
+
+.merch-div {
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: #e2e2e2;
+}
+
+a:hover {
+    color: grey;
+}
+

@@ -1,10 +1,11 @@
 import "./App.css";
 import logo from './logo.svg';
 
-import Home from "../Navbar/Home";
-import Bandas from "../Navbar/Bandas";
-import Pais from "../Navbar/Pais";
-import Navbar from "../Navbar/Navbar";
+import Home from "../Buttons/Home";
+import Bandas from "../Buttons/Bandas";
+import Pais from "../Buttons/Pais";
+import Navbar from "../Buttons/Navbar";
+import Bio from "../Biography/Bio";
 import Formulario from "../Formulario/Formulario";
 
 
@@ -19,6 +20,27 @@ function App() {
       break;
     case "/pais":
       component = <Pais />
+      break;
+    case "/Metallica":
+      component = <Bio />
+      break;
+    case "/BMTH":
+      component = <Bio />
+      break;
+    case "/Ekos":
+      component = <Bio />
+      break;
+    case "/Sleeptoken":
+      component = <Bio />
+      break;
+    case "/ACDC":
+      component = <Bio />
+      break;
+    case "/Halestorm":
+      component = <Bio />
+      break;
+    case "/Nirvana":
+      component = <Bio />
       break;
     case "/formulario":
       component = <Formulario />

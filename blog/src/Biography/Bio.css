@@ -1,0 +1,34 @@
+.bio-div {
+    /*border: 4px solid white;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.bio-div .perfil-img {
+    border-radius: 50%;
+    height: 130px;
+}
+
+.bio-points {
+    list-style: none;
+    font-size: 20px;
+    font-style: normal;
+    /*border: 3px solid red;*/
+}
+
+.bio-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 33px;
+}
+
+.buttons-div {
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #e2e2e2;
+    margin-top: 20px;
+}
