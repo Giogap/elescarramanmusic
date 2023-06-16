@@ -41,6 +41,35 @@ app.get("/bandas", (req, res) => {
     });
 });
 
+app.put("/update", (req, res) => {
+    const nombre = req.body.nombre;
+    const biografia = req.body.biografia;
+    const genero = req.body.genero;
+    const pais = req.body.pais;
+    const id = req.body.id;
+    
+
+    db.query('UPDATE bandas SET nombre = ?, biografia = ?, genero = ?, pais = ? WHERE id = ?', [nombre, biografia, genero, pais, id], (err, result) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.send("Actualizado Ok");
+        }
+    });
+});
+
+app.delete("/delete/:id", (req, res) => {
+    const id = req.params.id;
+    
+
+    db.query('DELETE FROM bandas WHERE id = ?', id, (err, result) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
 
 app.listen(3001, () => {
     console.log("Server Ok 3001");

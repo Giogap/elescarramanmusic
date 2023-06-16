@@ -1,7 +1,7 @@
-client
+blog
 1. npx create-react-app .
 5. npm install axios
-
+7. npm install react-bootstrap bootstrap
 
 server
 2. npm init

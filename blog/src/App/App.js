@@ -20,7 +20,7 @@ function App() {
     case "/pais":
       component = <Pais />
       break;
-      case "/formulario":
+    case "/formulario":
       component = <Formulario />
       break;
     // no default
