@@ -27,6 +27,7 @@ Este es el frontend de la aplicación El Escarraman Music desarrollado con React
 4. **Abre tu navegador:**
    La aplicación estará disponible en `http://localhost:5173` (o el puerto que se muestre en la terminal)
 
+
 ## Tecnologías Utilizadas
 
 - React 19
