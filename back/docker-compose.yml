@@ -1,0 +1,43 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: escarraman_postgres
+    environment:
+      POSTGRES_DB: escarraman_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ../requeriments/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - escarraman_network
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: escarraman_backend
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_USER: postgres
+      DATABASE_PASSWORD: postgres
+      DATABASE_NAME: escarraman_db
+    depends_on:
+      - postgres
+    networks:
+      - escarraman_network
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+volumes:
+  postgres_data:
+
+networks:
+  escarraman_network:
+    driver: bridge 
