@@ -11,7 +11,7 @@ Este es el frontend de la aplicación El Escarraman Music desarrollado con React
 
 1. **Navega al directorio FRONT:**
    ```bash
-   cd FRONT
+   cd front
    ```
 
 2. **Instala las dependencias:**
