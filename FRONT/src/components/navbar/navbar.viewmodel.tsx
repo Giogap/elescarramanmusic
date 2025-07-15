@@ -56,11 +56,11 @@ const NavLinks = memo(
       [isLinkActive]
     );
 
-    const handleLinkClick = () => {
+    const handleLinkClick = useCallback(() => {
       if (isMobile && onLinkClick) {
         onLinkClick();
       }
-    };
+    }, [isMobile, onLinkClick]);
 
     return (
       <>
@@ -88,15 +88,23 @@ NavLinks.displayName = "NavLinks";
 const NavbarViewModel = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = useCallback(() => {
+    setIsMenuOpen((prev) => !prev);
+  }, []);
 
-  const closeMenu = () => {
+  const closeMenu = useCallback(() => {
     setIsMenuOpen(false);
-  };
+  }, []);
 
-  return { toggleMenu, closeMenu, isMenuOpen, NavLinks };
+  // Memoizar el componente NavLinks para evitar recrearlo
+  const MemoizedNavLinks = useMemo(() => NavLinks, []);
+
+  return { 
+    toggleMenu, 
+    closeMenu, 
+    isMenuOpen, 
+    NavLinks: MemoizedNavLinks 
+  };
 };
 
 export default NavbarViewModel;

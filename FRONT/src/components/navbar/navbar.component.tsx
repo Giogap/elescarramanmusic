@@ -9,35 +9,96 @@ import {
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import NavbarViewModel from "./navbar.viewmodel";
 
+// Componente memoizado para la parte estática del navbar
+const NavbarLogo = memo(() => (
+  <div className="flex items-center gap-2">
+    <img
+      src={imgLosArboles}
+      className="h-8 rounded-full"
+      alt="Flowbite Logo"
+    />
+    <span className="text-2xl font-semibold whitespace-nowrap text-white">
+      Elescarramanmusic
+    </span>
+  </div>
+));
+
+NavbarLogo.displayName = "NavbarLogo";
+
+// Componente memoizado para el botón hamburguesa
+const HamburgerButton = memo(({ 
+  isMenuOpen, 
+  toggleMenu 
+}: { 
+  isMenuOpen: boolean; 
+  toggleMenu: () => void; 
+}) => (
+  <button
+    onClick={toggleMenu}
+    className="sm:hidden p-2 text-white hover:bg-gray-700 rounded-md"
+    aria-label="Toggle menu"
+  >
+    {isMenuOpen ? (
+      <XMarkIcon className="h-6 w-6" />
+    ) : (
+      <Bars3Icon className="h-6 w-6" />
+    )}
+  </button>
+));
+
+HamburgerButton.displayName = "HamburgerButton";
+
+// Componente memoizado para los controles de búsqueda e idioma
+const NavbarControls = memo(() => (
+  <div className="flex items-center md:justify-end gap-2 mt-2 md:mt-0 ">
+    <Input
+      classNames={{
+        base: "max-w-full md:w-48 lg:w-56 h-10",
+        mainWrapper: "h-full",
+        input: "text-small",
+        inputWrapper:
+          "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
+      }}
+      placeholder="Buscar..."
+      size="sm"
+      startContent={<MagnifyingGlassIcon className="h-5 w-5" />}
+      type="search"
+    />
+
+    <Select
+      aria-label="Selecciona el idioma"
+      className="max-w-xs w-32"
+      size="sm"
+      endContent={<GlobeAmericasIcon className="h-5 w-5" />}
+      variant="underlined"
+      defaultSelectedKeys={["es"]}
+    >
+      <SelectItem key="es">Español</SelectItem>
+      <SelectItem key="en">English</SelectItem>
+      <SelectItem key="fr">Français</SelectItem>
+      <SelectItem key="de">Deutsch</SelectItem>
+      <SelectItem key="it">Italiano</SelectItem>
+      <SelectItem key="pt">Português</SelectItem>
+      <SelectItem key="ru">Русский</SelectItem>
+      <SelectItem key="ja">日本語</SelectItem>
+      <SelectItem key="zh">中文</SelectItem>
+    </Select>
+
+    <UserComponent />
+  </div>
+));
+
+NavbarControls.displayName = "NavbarControls";
+
 const NavbarComponent = memo(() => {
   const { toggleMenu, closeMenu, isMenuOpen, NavLinks } = NavbarViewModel();
 
   return (
     <div className="w-full flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-br from-gray-950 to-red-900 p-3">
       <div className="flex items-center gap-2 pl-2 py-1 w-full sm:w-auto justify-between sm:justify-start">
-        <div className="flex items-center gap-2">
-          <img
-            src={imgLosArboles}
-            className="h-8 rounded-full"
-            alt="Flowbite Logo"
-          />
-          <span className="text-2xl font-semibold whitespace-nowrap text-white">
-            Elescarramanmusic
-          </span>
-        </div>
+        <NavbarLogo />
 
-        {/* Botón hamburguesa para móvil */}
-        <button
-          onClick={toggleMenu}
-          className="sm:hidden p-2 text-white hover:bg-gray-700 rounded-md"
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? (
-            <XMarkIcon className="h-6 w-6" />
-          ) : (
-            <Bars3Icon className="h-6 w-6" />
-          )}
-        </button>
+        <HamburgerButton isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
       </div>
 
       {/* Menú móvil */}
@@ -57,42 +118,7 @@ const NavbarComponent = memo(() => {
             </div>
           </div>
 
-          <div className="flex items-center md:justify-end gap-2 mt-2 md:mt-0 ">
-            <Input
-              classNames={{
-                base: "max-w-full md:w-48 lg:w-56 h-10",
-                mainWrapper: "h-full",
-                input: "text-small",
-                inputWrapper:
-                  "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
-              }}
-              placeholder="Buscar..."
-              size="sm"
-              startContent={<MagnifyingGlassIcon className="h-5 w-5" />}
-              type="search"
-            />
-
-            <Select
-              aria-label="Selecciona el idioma"
-              className="max-w-xs w-32"
-              size="sm"
-              endContent={<GlobeAmericasIcon className="h-5 w-5" />}
-              variant="underlined"
-              defaultSelectedKeys={["es"]}
-            >
-              <SelectItem key="es">Español</SelectItem>
-              <SelectItem key="en">English</SelectItem>
-              <SelectItem key="fr">Français</SelectItem>
-              <SelectItem key="de">Deutsch</SelectItem>
-              <SelectItem key="it">Italiano</SelectItem>
-              <SelectItem key="pt">Português</SelectItem>
-              <SelectItem key="ru">Русский</SelectItem>
-              <SelectItem key="ja">日本語</SelectItem>
-              <SelectItem key="zh">中文</SelectItem>
-            </Select>
-
-            <UserComponent />
-          </div>
+          <NavbarControls />
         </div>
       </div>
     </div>
